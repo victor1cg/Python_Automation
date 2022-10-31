@@ -25,7 +25,7 @@ DESVANTAGENS:
 - Se usado no mesmo computado de uso, trava o uso do mesmo;
 - Utlizado para automatizar, não para scraper;
 
-## Selenium - Automção sistemas WEB
+## Selenium - Automação sistemas WEB
 
 VANTAGENS:
 - Não atrapalha o uso do computador;
@@ -47,9 +47,65 @@ DESVANTAGENS:
 - Somente sistemas WEB;
 
 
-# ROBOTS.TXT
+# ------ ROBOTS.TXT
 
 É super importante, pois contem dados e regras para o scraper.
 
 - User-agent - O nome do bot
 - Disallow - Lista das paginas que o bot não deve varrer.
+
+
+# ------ SCRAPY
+
+Apos configurar e ativar o ambiente virtual.
+
+Sempre checar se o Interpreter esta no venv
+![alt text](image0.png)
+
+Rodar o codigo abaixo no terminal:
+
+`scrapy startproject varredor_de_sites`
+
+Irá aparecer a seguinta pasta
+![alt text](image1.png)
+
+Dentro da pasta spiders, criar um novo arquivo que ira conter o script.
+
+Para rodar esse novo bot, ir no terminal e chamar o arquivo:
+
+`scrapy crawl <nome_bot>`
+
+# ----- SCRAPY - XPATH
+Podemos extrair dados atraves do Xpath ou seletores CSS.
+
+Link de teste : https://cursoautomacao.netlify.app/
+
+F12 abre os elementos.
+
+**// tag[@atributo = 'valor']**
+
+Ctrl + F - pesquisar: 
+
+//h4[text() = 'Checkbox')]
+-> h4 é o header.
+
+//*[contains(text(),'Dropdown')]
+- Ira retornar todas as tags com Dropdown.
+
+//*[contains(text(),'Dropdown') or starts-with(text(),'Exemplo')]
+- Ira retornar Dropdown e Exemplo (start).
+
+//div[@div = 'select-class']//fields//h4
+- Ira retornar o filho do div definido.
+
+### Pegar o valor
+
+Coloca text() no final do argumento:
+
+//span[@class='text']/text()
+
+> Teste do XPATH na hora
+
+Na mesma seção, clicar em CONSOLE e colar o codigo `$x("//span[@class='text']/text()")`
+
+O valor ira retornar em nodeValue.
