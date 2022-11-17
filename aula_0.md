@@ -22,7 +22,7 @@ VANTAGENS:
 
 DESVANTAGENS:
 - Depende da resolução da tela;
-- Se usado no mesmo computado de uso, trava o uso do mesmo;
+- Se usado no mesmo computador de uso, trava o uso do mesmo;
 - Utlizado para automatizar, não para scraper;
 
 ## Selenium - Automação sistemas WEB
@@ -36,6 +36,15 @@ DESVANTAGENS:
 - Se o dominio mudar, precisamos atualizar;
 - Somente sistemas WEB;
 - Precisa do navagador;
+
+COMANDOS:
+> voltar - driver.back()
+> avançar - driver.forward()
+> atualizar - driver.refresh()
+> url atual - driver.current_url
+> nova aba - driver.switch_to.new_window('tab')
+> Screenshot - driver.save_screenshot('./image.png')
+> Finalizar - driver.quit()
 
 ## Scrapy - Web Scrapping
 
