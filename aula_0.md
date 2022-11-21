@@ -7,8 +7,7 @@ https://medium.com/analytics-vidhya/how-to-create-a-readme-md-file-8fb2e8ce24e3
 
 **MODO DEBUG** 
 
-F9 marca o break point;
-
+F9 marca o break point;  
 F5 abre o executor de debug;
 
 
@@ -38,13 +37,13 @@ DESVANTAGENS:
 - Precisa do navagador;
 
 COMANDOS:
-> voltar - driver.back()
-> avançar - driver.forward()
-> atualizar - driver.refresh()
-> url atual - driver.current_url
-> nova aba - driver.switch_to.new_window('tab')
-> Screenshot - driver.save_screenshot('./image.png')
-> Finalizar - driver.quit()
+> voltar - driver.back()  
+> avançar - driver.forward()  
+> atualizar - driver.refresh()  
+> url atual - driver.current_url  
+> nova aba - driver.switch_to.new_window('tab')  
+> Screenshot - driver.save_screenshot('./image.png')  
+> Finalizar - driver.quit()  
 
 ## Scrapy - Web Scrapping
 
@@ -56,7 +55,7 @@ DESVANTAGENS:
 - Somente sistemas WEB;
 
 
-# ------ ROBOTS.TXT
+## ------ ROBOTS.TXT
 
 É super importante, pois contem dados e regras para o scraper.
 
@@ -64,11 +63,11 @@ DESVANTAGENS:
 - Disallow - Lista das paginas que o bot não deve varrer.
 
 
-# ------ SCRAPY
+## ------ SCRAPY
 
 Apos configurar e ativar o ambiente virtual.
 
-Sempre checar se o Interpreter esta no venv
+Sempre checar se o Interpreter esta no venv  
 ![alt text](image0.png)
 
 Rodar o codigo abaixo no terminal:
@@ -84,8 +83,10 @@ Para rodar esse novo bot, ir no terminal e chamar o arquivo:
 
 `scrapy crawl <nome_bot>`
 
-# ----- SCRAPY - XPATH
+## ----- SCRAPY - XPATH
 Podemos extrair dados atraves do Xpath ou seletores CSS.
+
+XPATH sempre inicia com **barra dupla //.**
 
 Link de teste : https://cursoautomacao.netlify.app/
 
@@ -95,17 +96,19 @@ F12 abre os elementos.
 
 Ctrl + F - pesquisar: 
 
+VIA Texto:  
 //h4[text() = 'Checkbox')]
 -> h4 é o header.
 
+Contains:  
 //*[contains(text(),'Dropdown')]
-- Ira retornar todas as tags com Dropdown.
 
+Ira retornar todos elementos com Dropdown ou Exemplo:  
 //*[contains(text(),'Dropdown') or starts-with(text(),'Exemplo')]
-- Ira retornar Dropdown e Exemplo (start).
 
+Filho:  
 //div[@div = 'select-class']//fields//h4
-- Ira retornar o filho do div definido.
+Ira retornar o filho do div definido.
 
 ### Pegar o valor
 
@@ -118,3 +121,11 @@ Coloca text() no final do argumento:
 Na mesma seção, clicar em CONSOLE e colar o codigo `$x("//span[@class='text']/text()")`
 
 O valor ira retornar em nodeValue.
+
+## ----- METODOS DE ESPERA
+
+> sleep - Simplesmente da uma pausa na execução do script;
+
+> Implicito - Por determinado tempo fica procurando o elemento. Não espera o tempo total. So precisa colocar 1 vez no script;
+
+> Explicito - Igual o Implicito, porém com mais parametros. Avançado.
